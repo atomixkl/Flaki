@@ -1,0 +1,2 @@
+# Flaki
+Multifunctional Discord bot
