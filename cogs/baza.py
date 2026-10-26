@@ -14,12 +14,13 @@ class bya(commands.Cog):
 
         await interaction.response.send_message(f"Понґ! *{pingms} мс*")
 
-    @app_commands.command(name="nyav", description="Флакі скаже няв :3")
+    @app_commands.command(name="nyav", description="Флакі скаже няв і не тільки :3")
     async def nyav(self, interaction: discord.Interaction):
 
-        frazy = ["Няв", "Нявк", "Няяяв", "Няв :3"]
+        frazy = ["Няв", "Няв :3", "Нявк", "Нявк ^^", "Няяв", "Няяв OwO", "Няяв :3", "Няяяв >:3с",
+                "Ня :3", "Мур <:aww:1518327799264575590>", "Мяр (,,•᷄﹏•᷅,,)", "Мяв (˶>⩊<˶)"]
         obrfraza = random.choice(frazy)
-        
+
         await interaction.response.send_message(obrfraza)
         
 
