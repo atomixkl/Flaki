@@ -14,7 +14,7 @@ class bya(commands.Cog):
 
         await interaction.response.send_message(f"Понґ! *{pingms} мс*")
 
-    @app_commands.command(name="nyav", description="Флакі скаже няв і не тільки :3")
+    @app_commands.command(name="nyav", description="Флакі скаже няв, і не тільки :3")
     async def nyav(self, interaction: discord.Interaction):
 
         frazy = ["Няв", "Няв :3", "Нявк", "Нявк ^^", "Няяв", "Няяв OwO", "Няяв :3", "Няяяв >:3с",
@@ -22,7 +22,11 @@ class bya(commands.Cog):
         obrfraza = random.choice(frazy)
 
         await interaction.response.send_message(obrfraza)
-        
+    
+    @app_commands.command(name="cutegif", description="Надсилає рандомну милу ґіфку :3")
+    async def cutegif(self, iteraction: discord.Interaction):
+        pass
+
 
 async def setup(bot):
     await bot.add_cog(bya(bot))
