@@ -1,7 +1,6 @@
 import discord
 import os
 import asyncio
-import openai
 from discord.ext import commands
 from discord import app_commands
 from dotenv import load_dotenv
@@ -24,8 +23,8 @@ class Flaki(commands.Bot):
             guild = discord.Object(id=GUILD_ID)
             self.tree.copy_global_to(guild=guild)
 
-            syncedcmd = await self.tree.sync()
-            print(f"Успішно синхронізовано команд: {len(syncedcmd)}")
+            syncedcmds = await self.tree.sync()
+            print(f"Успішно синхронізовано команд: {len(syncedcmds)}")
         except Exception as e:
             print(f"Помилка синхронізації команд: {e}")
 

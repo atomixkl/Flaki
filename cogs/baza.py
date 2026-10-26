@@ -1,4 +1,5 @@
 import discord
+import random
 from discord.ext import commands
 from discord import app_commands
 
@@ -13,6 +14,13 @@ class bya(commands.Cog):
 
         await interaction.response.send_message(f"Понґ! *{pingms} мс*")
 
+    @app_commands.command(name="nyav", description="Флакі скаже няв :3")
+    async def nyav(self, interaction: discord.Interaction):
+
+        frazy = ["Няв", "Нявк", "Няяяв", "Няв :3"]
+        obrfraza = random.choice(frazy)
+        
+        await interaction.response.send_message(obrfraza)
         
 
 async def setup(bot):

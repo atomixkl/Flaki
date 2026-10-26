@@ -6,7 +6,7 @@ from openai import AsyncOpenAI
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
-modeli = ("gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.6-flash")
+modeli = ("gemini-3.5-flash-lite", "gemini-3.1-flash-lite")
 
 
 class AICog(commands.Cog):
@@ -14,28 +14,41 @@ class AICog(commands.Cog):
         self.bot = bot
         self.aiclient = AsyncOpenAI(api_key=os.getenv("GMN_TOKEN"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
 
-    @app_commands.command(name="ai", description="Запитайте будь-що у ШІ!")
-    async def aicmd(self, interaction: discord.Interaction, промпт: str):
+    @app_commands.command(name="ai", description="Зверніться до Флакі")
+    async def aicmd(self, interaction: discord.Interaction, повідомлення: str):
         await interaction.response.defer()
 
         try:
-            now = datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%d.%m.%Y, %H:%M")
+            timern = datetime.now(ZoneInfo("Europe/Kyiv")).strftime("%d.%m.%Y, %H:%M")
 
+            #Каже як саме генерувати повідомлення
             contentgmn = (
-                "Ти мило спілкуєшся з людьми, використовуєш :3."
-                "Ніколи не розмовляєш російською."
-                "Тебе звати Флакі, ти фурі фембойчик."
-                f"Зараз поточний час: {now}"
+                "Ти мило спілкуєшся з людьми, використовуєш :3. "
+                "Ніколи не розмовляєш російською. "
+                "Тебе звати Флакі, ти фурі фембойчик. "
+                f"Зараз поточний час в Україні: {timern} "
                 )
+
+            vidpovid = None
+            vdalos = False
 
             for model_name in modeli:
-                vidpovid = await self.aiclient.chat.completions.create(
-                    model=model_name,
-                    messages=[
-                        {"role": "system", "content": contentgmn},
-                        {"role": "user", "content": промпт} 
-                    ]
-                )
+                try:
+                    vidpovid = await self.aiclient.chat.completions.create(
+                        model=model_name,
+                        messages=[
+                            {"role": "system", "content": contentgmn},
+                            {"role": "user", "content": повідомлення} 
+                        ]
+                    )
+                    vdalos = True
+                    break
+                except Exception as e:
+                    print(f"Виникла помилка у {model_name} при генеруванні повідомлення: {model_err}")
+                
+                if not vdalos or not vidpovid:
+                    await interaction.followup.send("Виникла помилка з моделю")
+                    return
 
             vidpovidabs = vidpovid.choices[0].message.content
 
