@@ -31,3 +31,7 @@
 **5. Markov chain:**
 
 *   Remembers chat messages and generates his messages based on them
+
+**6. AI:**
+
+* You can ask anything AI with its own personality

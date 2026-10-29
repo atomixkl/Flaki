@@ -28,7 +28,7 @@ class Flaki(commands.Bot):
         except Exception as e:
             print(f"Помилка синхронізації команд: {e}")
 
-        print(f"Запущенно як {self.user}")
+        print(f"Успішло запустилося як {self.user}")
 
 
 
