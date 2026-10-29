@@ -34,4 +34,11 @@
 
 **6. AI:**
 
-* You can ask anything AI with its own personality
+* You can ask anything AI with its own personality 
+
+## Libreries that bot is using:
+```
+discord.py
+openai
+python-dotenv
+``` 
