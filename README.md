@@ -36,9 +36,23 @@
 
 * You can ask anything AI with its own personality 
 
-## Libreries that bot is using:
+
+## How to try:
+1. Create a bot in Discord Developer Portal and copy his token
+2. Go to https://aistudio.google.com/api-keys and create api key
+3. git clone https://github.com/atomixkl/Flaki
+4. Download required libraries:
 ```
 discord.py
 openai
 python-dotenv
 ``` 
+5. Create .env file and paste your bot token and Gemini api key:
+```
+DS_TOKEN="Your Discord bot token"
+GMN_KEY="Your Gemini api key"
+```
+6. Launch it!:
+```
+python Flaki.py
+```

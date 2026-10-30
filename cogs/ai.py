@@ -12,7 +12,7 @@ modeli = ("gemini-3.5-flash-lite", "gemini-3.1-flash-lite")
 class AICog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.aiclient = AsyncOpenAI(api_key=os.getenv("GMN_TOKEN"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+        self.aiclient = AsyncOpenAI(api_key=os.getenv("GMN_KEY"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
 
     @app_commands.command(name="ai", description="Зверніться до Флакі")
     async def aicmd(self, interaction: discord.Interaction, повідомлення: str):
