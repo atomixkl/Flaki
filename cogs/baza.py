@@ -35,7 +35,9 @@ class bya(commands.Cog):
                 "https://cdn.discordapp.com/attachments/1265636854431219772/1297946528643809385/silly.gif",
                 "https://cdn.discordapp.com/attachments/1175744427411652608/1389668599555293284/togif.gif",
                 "https://cdn.discordapp.com/attachments/1038805905053065292/1368416492080730213/IMG_3639.gif",
-                ""
+                "https://klipy.com/gifs/floragato-meowscarada",
+                "https://klipy.com/gifs/meowscarada-mini-meowscarada",
+                "https://klipy.com/gifs/pokemon-umbreon-7"
         
         
         

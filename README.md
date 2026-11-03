@@ -23,16 +23,19 @@
 
 *   You can add a counting game to make server more interesting
 
-
 **4. Levels:**
 
 *   Have good leveling system for slow progression
 
-**5. Markov chain:**
+**5. Reminder:**
+
+*   You can make bot send your message at any time of day you want
+
+**6. Markov chain:**
 
 *   Remembers chat messages and generates his messages based on them
 
-**6. AI:**
+**7. AI:**
 
 * You can ask anything AI with its own personality 
 
