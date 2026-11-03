@@ -48,9 +48,7 @@
     ```
 4. Download required libraries:
 ```
-discord.py
-openai
-python-dotenv
+discord.py openai python-dotenv
 ``` 
 5. Create .env file and paste your bot token and Gemini api key:
 ```
