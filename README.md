@@ -43,9 +43,10 @@
 ## How to try:
 1. Create a bot in Discord Developer Portal and copy his token
 2. Go to https://aistudio.google.com/api-keys and create api key
-3.  ```
-    git clone https://github.com/atomixkl/Flaki
-    ```
+3. Git clone project:
+```
+git clone https://github.com/atomixkl/Flaki
+```
 4. Download required libraries:
 ```
 discord.py openai python-dotenv
