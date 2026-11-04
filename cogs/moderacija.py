@@ -56,7 +56,12 @@ class moderacija(commands.Cog):
 
     @app_commands.command(name="warn", description="Видає попередження")
     async def warn(self, interaction: discord.Interaction, користувач: discord.Member, причина: str | None = None):
-        embed = discord.Embed(description=f"{користувач.mention} отримав попередження", color=discord.Color.from_str("#e67a2e"))
+        embed = discord.Embed(description=f"{користувач.mention} отримав попередження", color=discord.Color.from_str("#edcf37"))
+        await interaction.response.send_message(embed=embed)
+
+    @app_commands.command(name="softwarn", description="Видає попередження")
+    async def softwarn(self, interaction: discord.Interaction, користувач: discord.Member, причина: str | None = None):
+        embed = discord.Embed(description=f"{користувач.mention} отримав попередження", color=discord.Color.from_str("#edcf37"))
         await interaction.response.send_message(embed=embed)
 
 async def setup(bot):

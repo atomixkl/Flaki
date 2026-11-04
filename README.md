@@ -9,7 +9,7 @@
 
 *    1.3 Kick
 
-*    1.4 Warn (with customizability)
+*    1.4 Warn (with customizability) and soft warn
 
 *    1.5 Timeout
 
