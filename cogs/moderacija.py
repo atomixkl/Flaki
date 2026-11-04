@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
-class moderacijaCog(commands.Cog):
+class moderacija(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -60,4 +60,4 @@ class moderacijaCog(commands.Cog):
         await interaction.response.send_message(embed=embed)
 
 async def setup(bot):
-    await bot.add_cog(moderacijaCog(bot))
+    await bot.add_cog(moderacija(bot))
