@@ -47,9 +47,11 @@ class moderacija(commands.Cog):
 
 
     @app_commands.command(name="unban", description="Знімає бан з користувача")
-    async def unban(self, interaction: discord.Interaction, користувач: discord.Member, час: str, причина: str | None = None):
+    @app_commands.guild_only()
+    @app_commands.default_permissions(ban_members=True)
+    async def unban(self, interaction: discord.Interaction, користувач: discord.Member, час: str, причина: str | None = None, приховано: bool = False):
         embed = discord.Embed(description=f"Успішно знято бан з {користувач.mention}.", color=discord.Color.from_str("#18f2a6"))
-        await interaction.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed, ephemeral=приховано)
 
 
 
@@ -61,16 +63,18 @@ class moderacija(commands.Cog):
 
 
     @app_commands.command(name="tempban", description="Видає тимчасовий бан")
-    async def tempban(self, interaction: discord.Interaction, користувач: discord.Member, час: str, причина: str | None = None):
+    @app_commands.guild_only()
+    @app_commands.default_permissions(ban_members=True)
+    async def tempban(self, interaction: discord.Interaction, користувач: discord.Member, час: str, причина: str | None = None, приховано: bool = False):
         embed = discord.Embed(description=f"{користувач.mention} отримали тимчасовий бан.", color=discord.Color.from_str("#f51d1d"))
-        await interaction.response.send_message(embed=embed)
+        await interaction.response.send_message(embed=embed, ephemeral=приховано)
 
 
 
     @app_commands.command(name="timeout", description="Видає таймаут")
     @app_commands.guild_only()
     @app_commands.default_permissions(moderate_members=True)
-    async def timeout(self, interaction: discord.Interaction, користувач: discord.User, час: str, причина: str | None = None):
+    async def timeout(self, interaction: discord.Interaction, користувач: discord.User, час: str, причина: str | None = None, приховано: bool = False):
 
         if not interaction.user.guild_permissions.moderate_members:
             return await interaction.response.send_message("Ви не маєте прав, щоб видати таймаут цьому користувачу", ephemeral=True)
@@ -115,7 +119,7 @@ class moderacija(commands.Cog):
         try:
             await людина.timeout(тривалість, reason=причина)
             embed = discord.Embed(description=f"{користувач.mention} отримали таймаут.", color=discord.Color.from_str("#f51d1d"))
-            await interaction.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed, ephemeral=приховано)
         except Exception as e:
             await interaction.response.send_message(f"Не вдалося видати таймаут: {e}", ephemeral=True)
 
@@ -124,7 +128,7 @@ class moderacija(commands.Cog):
     @app_commands.command(name="kick", description="Викидає користувача зі сервера")
     @app_commands.guild_only()
     @app_commands.default_permissions(kick_members=True)
-    async def kick(self, interaction: discord.Interaction, користувач: discord.User, причина: str | None = None):
+    async def kick(self, interaction: discord.Interaction, користувач: discord.User, причина: str | None = None, приховано: bool = False):
 
         if not interaction.user.guild_permissions.kick_members:
             return await interaction.response.send_message("Ви не маєте прав, щоб викинути цю людину", ephemeral=True)
@@ -155,13 +159,15 @@ class moderacija(commands.Cog):
         try:
             await interaction.guild.kick(користувач, reason=причина)
             embed = discord.Embed(description=f"{користувач.mention} були викинуті зі серверу.", color=discord.Color.from_str("#f51d1d"))
-            await interaction.response.send_message(embed=embed)
+            await interaction.response.send_message(embed=embed, ephemeral=приховано)
         except Exception as e:
             await interaction.response.send_message(f"Не вдалося викинути користувача: {e}", ephemeral=True)
 
 
 
     @app_commands.command(name="warn", description="Видає попередження")
+    @app_commands.guild_only()
+    @app_commands.default_permissions(moderate_members=True)
     async def warn(self, interaction: discord.Interaction, користувач: discord.Member, причина: str | None = None):
         embed = discord.Embed(description=f"{користувач.mention} отримали попередження.", color=discord.Color.from_str("#edcf37"))
         await interaction.response.send_message(embed=embed)
@@ -169,6 +175,8 @@ class moderacija(commands.Cog):
 
 
     @app_commands.command(name="softwarn", description="Видає попередження")
+    @app_commands.guild_only()
+    @app_commands.default_permissions(moderate_members=True)
     async def softwarn(self, interaction: discord.Interaction, користувач: discord.Member, причина: str | None = None):
         embed = discord.Embed(description=f"{користувач.mention} отримали попередження.", color=discord.Color.from_str("#edcf37"))
         await interaction.response.send_message(embed=embed)
