@@ -14,6 +14,12 @@ class bya(commands.Cog):
 
         await interaction.response.send_message(f"Понґ! *{pingms} мс*")
 
+
+    @app_commands.command(name="say", description="Скажіть будь-що від ім'я бота")
+    async def say(self, interaction: discord.Interaction, повідомлення: str):
+        await interaction.response.send_message(повідомлення)
+
+
     @app_commands.command(name="nyav", description="Флакі скаже няв, і не тільки :3")
     async def nyav(self, interaction: discord.Interaction):
 
@@ -23,6 +29,7 @@ class bya(commands.Cog):
 
         await interaction.response.send_message(obrfraza)
     
+
     @app_commands.command(name="rgif", description="Надсилає рандомну милу ґіфку :3")
     async def cutegif(self, interaction: discord.Interaction):
         
@@ -37,9 +44,10 @@ class bya(commands.Cog):
                 "https://cdn.discordapp.com/attachments/1038805905053065292/1368416492080730213/IMG_3639.gif",
                 "https://klipy.com/gifs/floragato-meowscarada",
                 "https://klipy.com/gifs/meowscarada-mini-meowscarada",
-                "https://klipy.com/gifs/pokemon-umbreon-7"
-        
-        
+                "https://klipy.com/gifs/pokemon-umbreon-7",
+                "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cHo4NWMyOWh6b2pyNHJ1M2YwemFqNnpsMzVlNjcyMzZmN3U4N2QwNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/by9WL85LSZI2rz5dqI/giphy.gif",
+                "https://klipy.com/gifs/furry-wypher-sleepy-paw-wiggle",
+                "https://klipy.com/gifs/furry-wypher-appear"
         
         ]
         obrgif = random.choice(gifs)
