@@ -38,7 +38,7 @@ class moderacija(commands.Cog):
         
         try:
             await interaction.guild.ban(користувач, reason=причина)
-            embed = discord.Embed(description=f"⛔ {користувач.mention} були забанені", color=discord.Color.from_str("#ed3326"))
+            embed = discord.Embed(description=f"🔨 {користувач.mention} були забанені", color=discord.Color.from_str("#ed3326"))
 
             await interaction.response.send_message(embed=embed, ephemeral=приховано)
         except Exception as e:
@@ -59,7 +59,7 @@ class moderacija(commands.Cog):
     async def fakeban(self, interaction: discord.Interaction, користувач: discord.Member, причина: str | None = None):
         opys = f"{користувач.mention} було забанено"
         if причина:
-            opys = f"⛔ {користувач.mention} були забанені за {причина}"
+            opys = f"🔨 {користувач.mention} були забанені за {причина}"
         embed = discord.Embed(description=opys, color=discord.Color.from_str("#ed3326"))
         await interaction.response.send_message(embed=embed)
 
@@ -69,7 +69,7 @@ class moderacija(commands.Cog):
     @app_commands.guild_only()
     @app_commands.default_permissions(ban_members=True)
     async def tempban(self, interaction: discord.Interaction, користувач: discord.User, час: str, причина: str | None = None, приховано: bool = False):
-        embed = discord.Embed(description=f"⛔ {користувач.mention} отримали тимчасовий бан", color=discord.Color.from_str("#ed3326"))
+        embed = discord.Embed(description=f"🔨 {користувач.mention} отримали тимчасовий бан", color=discord.Color.from_str("#ed3326"))
         await interaction.response.send_message(embed=embed, ephemeral=приховано)
 
 

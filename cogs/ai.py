@@ -52,6 +52,8 @@ class AICog(commands.Cog):
 
             vidpovidabs = vidpovid.choices[0].message.content
 
+            if len(vidpovidabs) > 2000:
+                vidpovidabs = vidpovidabs[:1997] + "..."
             
             await interaction.followup.send(vidpovidabs)
 
