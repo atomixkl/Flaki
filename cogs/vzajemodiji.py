@@ -50,8 +50,8 @@ class vzajemodiji(commands.Cog):
         await interaction.response.send_message(content=користувач.mention, embed=embed)
 
 
-    @app_commands.command(name="pat", description="Погладьте користувача")
-    async def pat(self, interaction: discord.Interaction, користувач: discord.Member):
+    @app_commands.command(name="pet", description="Погладьте користувача")
+    async def pet(self, interaction: discord.Interaction, користувач: discord.Member):
 
         gifky = [
         "https://static2.klipy.com/ii/4e7bea9f7a3371424e6c16ebc93252fe/83/ac/KhlmotLP4bRD9.gif",
@@ -62,8 +62,8 @@ class vzajemodiji(commands.Cog):
         "https://cdn.discordapp.com/attachments/1091441098829856949/1568512191735402546/X2Twitter.com_Pl6CClPx4G0tcE02_720p.gif",
         "https://cdn.discordapp.com/attachments/1259635449773818087/1371910998797320222/15CopyA4E794E-ezgif.com-video-to-gif-converter.gif",
         "https://cdn.discordapp.com/attachments/1447644388590092462/1455229605937156116/TlkNJDU.gif",
-        "https://media1.tenor.com/m/pNXUe-mak0sAAAAC/head-scratches-omatssu.gif",
-        "https://tenor.com/view/furry-pet-rub-rubbing-cute-gif-13965594477933576476"
+        "https://static2.klipy.com/ii/4493325008d34b7bf8cd6813cd5c1619/a4/6d/nH7q41KIrvdkMl0Y9ZOk.gif",
+        "https://static2.klipy.com/ii/4493325008d34b7bf8cd6813cd5c1619/51/1d/Dfvpu8dfu7pCnJ.gif"
 
 
         ]

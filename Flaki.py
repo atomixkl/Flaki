@@ -13,6 +13,7 @@ TOKEN = os.getenv("DS_TOKEN")
 
 intents = discord.Intents.default()
 intents.message_content = True
+intents.members = True
 
 class Flaki(commands.Bot):
     def __init__(self):
@@ -36,6 +37,7 @@ class Flaki(commands.Bot):
         for filename in os.listdir("./cogs"):
             if filename.endswith(".py"):
                 await self.load_extension(f"cogs.{filename[:-3]}")
+
     
 async def main():
     discord.utils.setup_logging()

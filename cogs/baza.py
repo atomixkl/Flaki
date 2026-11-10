@@ -16,6 +16,7 @@ class bya(commands.Cog):
 
 
     @app_commands.command(name="say", description="Скажіть будь-що від ім'я бота")
+    @app_commands.default_permissions(administrator=True)
     async def say(self, interaction: discord.Interaction, повідомлення: str):
         await interaction.response.send_message(повідомлення)
 
@@ -84,7 +85,9 @@ class bya(commands.Cog):
                 "https://cdn.discordapp.com/attachments/1110665701452157072/1360566276057075752/attachment.gif",
                 "https://cdn.discordapp.com/attachments/1530205949372006541/1556916458594762782/togif.gif?backend=b2",
                 "https://klipy.com/gifs/3-414",
-                "https://cdn.discordapp.com/attachments/1305201294872674348/1412049391472218182/image0.gif"
+                "https://cdn.discordapp.com/attachments/1305201294872674348/1412049391472218182/image0.gif",
+                "https://cdn.discordapp.com/attachments/551911984149299220/1321542559603888158/furry_worry_speech.gif",
+                "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnF1b2l1cHVoYjZ1YTZxaW5mMTY5OGRzb2t1bnR4djY1ZzZ5b2x6YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QBRAwQKQzTl9lScCOj/giphy.gif"
 
         
         ]
