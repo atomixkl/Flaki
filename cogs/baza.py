@@ -15,21 +15,17 @@ class bya(commands.Cog):
         await interaction.response.send_message(f"Понґ! *{pingms} мс*")
 
 
-    @app_commands.command(name="say", description="Скажіть будь-що від ім'я бота")
-    @app_commands.default_permissions(administrator=True)
-    async def say(self, interaction: discord.Interaction, повідомлення: str):
-        await interaction.response.send_message(повідомлення)
 
-
-    @app_commands.command(name="nyav", description="Флакі скаже няв, і не тільки :3")
+    @app_commands.command(name="nyav", description="Флакі скаже няв, мяв чи мур :3")
     async def nyav(self, interaction: discord.Interaction):
 
-        frazy = ["Няв", "Няв :3", "Нявк", "Нявк ^^", "Няяв", "Няяв OwO", "Няяв :3", "Няяяв >:3с",
-                "Ня :3", "Мур <:aww:1518327799264575590>", "Мяр (,,•᷄﹏•᷅,,)", "Мяв (˶>⩊<˶)"]
+        frazy = ["Няв", "Няв ^^", "Няв :3", "Нявк", "Нявк :3", "Нявк ^^", "Няяв", "Няяв OwO", "Няяв :3", "Няяв ^^", "Няяяв >:3с",
+                "Ня :3", "Мур <:aww:1518327799264575590>", "Мур няв :3", "Мяр","Мяр~ :3", "Мяр ^^", "Мяв (˶>⩊<˶)", "Мяв :3"]
         obrfraza = random.choice(frazy)
 
         await interaction.response.send_message(obrfraza)
     
+
 
     @app_commands.command(name="rgif", description="Надсилає рандомну милу ґіфку :3")
     async def cutegif(self, interaction: discord.Interaction):

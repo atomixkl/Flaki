@@ -50,7 +50,7 @@ class moderacija(commands.Cog):
     @app_commands.guild_only()
     @app_commands.default_permissions(ban_members=True)
     async def unban(self, interaction: discord.Interaction, користувач: discord.User, приховано: bool = False):
-        embed = discord.Embed(description=f"✅ Успішно знято бан з {користувач.mention}", color=discord.Color.from_str("#3feb64"))
+        embed = discord.Embed(description=f"✅ Успішно знято бан з {користувач.mention}", color=discord.Color.from_str("#3feb45"))
         await interaction.response.send_message(embed=embed, ephemeral=приховано)
 
 
@@ -188,7 +188,7 @@ class moderacija(commands.Cog):
 # #ed3326 Червоний
 # #eb8a3f Помаранчевий
 # #ebe23f Жовтий
-# #3feb64 Зелений
+# #3feb45 Зелений
 
 async def setup(bot):
     await bot.add_cog(moderacija(bot))
