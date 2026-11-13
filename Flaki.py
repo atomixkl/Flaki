@@ -7,8 +7,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GUILD_ID = os.getenv("DS_GUILD")
-
 TOKEN = os.getenv("DS_TOKEN")
 
 intents = discord.Intents.default()
@@ -21,10 +19,9 @@ class Flaki(commands.Bot):
 
     async def on_ready(self):
         try:
-            guild = discord.Object(id=GUILD_ID)
-            self.tree.copy_global_to(guild=guild)
 
-            syncedcmds = await self.tree.sync()
+            syncedcmds = await self.tree.sync()  
+
             print(f"Успішно синхронізовано команд: {len(syncedcmds)}")
         except Exception as e:
             print(f"Помилка синхронізації команд: {e}")
